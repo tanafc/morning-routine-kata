@@ -22,9 +22,11 @@ enum Activity {
   NO_ACTIVITY = "No activity",
   DO_EXERCISE = "Do exercise",
   READ_AND_STUDY = "Read and study",
+  EAT_BREAKFAST = "Eat breakfast",
 }
 
 const Routine: Record<number, Activity> = {
   6: Activity.DO_EXERCISE,
   7: Activity.READ_AND_STUDY,
+  8: Activity.EAT_BREAKFAST,
 }
