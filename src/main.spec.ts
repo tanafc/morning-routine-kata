@@ -17,4 +17,15 @@ describe("Morning routine", () => {
 
     expect(activity).toBe("No activity")
   })
+
+  it("shows exercise activity between 06:00 and 06:59", () => {
+    const date = new Date(2000, 1, 1, 6, 0, 0)
+    vi.setSystemTime(date)
+
+    const routine = new MorningRoutine()
+
+    const activity = routine.whatShouldIDoNow()
+
+    expect(activity).toBe("Do exercise")
+  })
 })
