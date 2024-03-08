@@ -1,10 +1,20 @@
-import { describe, it, expect } from "vitest"
-import { myFunction } from "./main.js"
+import { describe, it, expect, afterEach, beforeEach, vi } from "vitest"
+import { MorningRoutine } from "./main.js"
 
-describe("Default test", () => {
-  it("should work", () => {
-    const result = myFunction()
+describe("Morning routine", () => {
+  beforeEach(() => {
+    vi.useFakeTimers()
+  })
 
-    expect(result).toBe(true)
+  afterEach(() => {
+    vi.useRealTimers()
+  })
+
+  it("shows no activity when not in morning hours", () => {
+    const routine = new MorningRoutine()
+
+    const activity = routine.whatShouldIDoNow()
+
+    expect(activity).toBe("No activity")
   })
 })

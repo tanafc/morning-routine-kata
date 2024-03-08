@@ -1,3 +1,9 @@
-export function myFunction() {
-  return true
+interface IMorningRoutine {
+  whatShouldIDoNow: () => string
+}
+
+export class MorningRoutine implements IMorningRoutine {
+  whatShouldIDoNow = () => {
+    return "No activity"
+  }
 }
