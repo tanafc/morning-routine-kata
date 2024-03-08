@@ -11,6 +11,9 @@ describe("Morning routine", () => {
   })
 
   it("shows no activity when not in morning hours", () => {
+    const date = new Date(2000, 1, 1, 18, 0, 0)
+    vi.setSystemTime(date)
+
     const routine = new MorningRoutine()
 
     const activity = routine.whatShouldIDoNow()
